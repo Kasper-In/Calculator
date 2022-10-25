@@ -12,32 +12,32 @@ class IntsCalculatorTest {
     Ints calcInts;
 
     @BeforeEach
-    public void setUp(){
-      calcInts = new IntsCalculator();
+    public void setUp() {
+        calcInts = new IntsCalculator();
     }
 
     @DisplayName("Проверка подсчета суммы")
     @ParameterizedTest
     @MethodSource("getSumArguments")
     void sum(int a, int b, int result) {
-        Assertions.assertEquals(result, calcInts.sum(a,b));
+        Assertions.assertEquals(result, calcInts.sum(a, b));
     }
 
     @DisplayName("Проверка подсчета произведения")
     @ParameterizedTest
     @MethodSource("getMultArguments")
     void mult(int a, int b, int result) {
-        Assertions.assertEquals(result, calcInts.mult(a,b));
+        Assertions.assertEquals(result, calcInts.mult(a, b));
     }
 
     @DisplayName("Проверка подсчета возведения в степень")
     @ParameterizedTest
     @MethodSource("getPowArguments")
     void pow(int a, int b, int result) {
-        Assertions.assertEquals(result, calcInts.pow(a,b));
+        Assertions.assertEquals(result, calcInts.pow(a, b));
     }
 
-    private static Stream<Arguments> getSumArguments(){
+    private static Stream<Arguments> getSumArguments() {
         return Stream.of(
                 Arguments.of(12, 55, 67),
                 Arguments.of(-81, 63, -18),
@@ -45,7 +45,7 @@ class IntsCalculatorTest {
         );
     }
 
-    private static Stream<Arguments> getMultArguments(){
+    private static Stream<Arguments> getMultArguments() {
         return Stream.of(
                 Arguments.of(10, 42, 420),
                 Arguments.of(0, 13, 0),
@@ -53,7 +53,7 @@ class IntsCalculatorTest {
         );
     }
 
-    private static Stream<Arguments> getPowArguments(){
+    private static Stream<Arguments> getPowArguments() {
         return Stream.of(
                 Arguments.of(2, 5, 32),
                 Arguments.of(-3, 3, -27),
